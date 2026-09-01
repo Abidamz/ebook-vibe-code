@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+assets/img/opt/
+assets/img/cover-bands.png
+.DS_Store

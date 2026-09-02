@@ -4,15 +4,16 @@
 Builds "Digital Product Cash Machine" ebook PDFs (A4, portrait).
 Run:  .venv/bin/python scripts/build_ebook.py --all
 Outputs:
-  assets/ebook/digital-product-cash-machine.pdf
-  assets/ebook/free-sample-chapter1.pdf
+  delivery/digital-product-cash-machine.pdf   (paid book - local only, gitignored, upload to Selar)
+  assets/ebook/free-sample-chapter1.pdf       (free sample - published on the site)
 """
 import os
 import re
 from fpdf import FPDF
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "assets", "ebook", "digital-product-cash-machine.pdf")
+DELIVERY_DIR = os.path.join(ROOT, "delivery")
+OUT = os.path.join(DELIVERY_DIR, "digital-product-cash-machine.pdf")
 IMG = os.path.join(ROOT, "assets", "img")
 OPT = os.path.join(ROOT, "assets", "img", "opt")
 LIVE_SITE_URL = "https://how-to-make-5k-10k-daily.pages.dev/"
@@ -1092,6 +1093,7 @@ def build():
     pdf.set_margins(M, 18, M)
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    os.makedirs(DELIVERY_DIR, exist_ok=True)
     pdf.output(OUT)
     print(f"✅ Ebook written: {OUT} ({os.path.getsize(OUT)/1024:.0f} KB, {pdf.pages_count} pages)")
 

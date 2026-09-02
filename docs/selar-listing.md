@@ -17,11 +17,26 @@ Use this as the source of truth for the live Selar product listing.
 | Price | **₦3,500** one-time payment |
 | Compare-at price | ₦10,000 |
 | Author | Oluwadarasimi Oluwadamilola |
-| Delivery file | `assets/ebook/digital-product-cash-machine.pdf` |
+| Delivery file | `delivery/digital-product-cash-machine.pdf` (built locally, gitignored — never deployed) |
 | Primary cover | `assets/img/selar-cover.png` |
 | Alternate covers | `assets/img/selar-cover-b.png`, `assets/img/selar-cover-c.png` |
 
 Upload `selar-cover.png` as the product image. The B and C variants are approved alternatives for future listing-image tests; do not upload all three as separate product files.
+
+## Delivery file workflow (local only)
+
+The paid PDF is **never committed and never deployed**. It is generated on demand
+and uploaded by hand to Selar:
+
+```bash
+python scripts/build_ebook.py --all
+# -> delivery/digital-product-cash-machine.pdf   (paid, gitignored)
+# -> assets/ebook/free-sample-chapter1.pdf       (free, published)
+```
+
+`delivery/` is listed in `.gitignore`, so Cloudflare Pages only ever publishes the
+free sample chapter. The only public path to the full book is the Selar checkout
+above.
 
 ## Short description
 
@@ -71,10 +86,11 @@ Get the full playbook now and start with one useful product, one clear offer, an
 
 ## Post-publish checklist
 
-- [ ] Upload the current `digital-product-cash-machine.pdf` as the paid delivery file.
+- [ ] Run `python scripts/build_ebook.py --all`, then upload `delivery/digital-product-cash-machine.pdf` as the paid delivery file.
 - [ ] Set the one-time NGN price to **₦3,500**.
 - [ ] Upload `selar-cover.png` as the primary product cover.
 - [ ] Confirm the checkout URL resolves to <https://selar.com/27778q2k78>.
 - [ ] Test the confirmation email/download flow with a real test purchase if possible.
 - [ ] Keep the free sample linked from the sales page; it is not the paid delivery file.
+- [ ] Confirm no public page links to the full PDF — the paid book must only be reachable through Selar.
 - [ ] Rebuild both PDFs with `python scripts/build_ebook.py --all` whenever the book copy or live-site CTA changes.

@@ -4,3 +4,4 @@ __pycache__/
 assets/img/opt/
 assets/img/cover-bands.png
 .DS_Store
+delivery/

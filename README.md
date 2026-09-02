@@ -21,9 +21,9 @@ make **₦5,000 – ₦10,000 daily (₦150K–₦300K monthly)** selling digita
 | `assets/js/main.js` | Buy-button wiring, sticky Buy Now bar, FAQ accordion, mobile nav, scroll reveal |
 | `assets/img/` | Cover art + 6 illustrations (AI-generated; web-optimized copies in `assets/img/web/`) |
 | `assets/img/selar-cover*.png` | Three finalized, square Selar listing-cover options (`selar-cover.png` is the primary) |
-| `assets/ebook/digital-product-cash-machine.pdf` | The finished 38-page ebook (PDF) |
+| `delivery/digital-product-cash-machine.pdf` | The finished 38-page paid ebook — **built locally, gitignored, uploaded to Selar** |
 | `assets/ebook/free-sample-chapter1.pdf` | Free Chapter 1 sample with a clickable CTA to the live sales page |
-| `scripts/build_ebook.py` | Rebuilds the full ebook and free sample PDFs (Python + fpdf2) |
+| `scripts/build_ebook.py` | Rebuilds the paid ebook (to `delivery/`) and the free sample PDF (Python + fpdf2) |
 | `scripts/make_selar_cover*.py` | Rebuilds the three Selar listing-cover images (Python + Pillow) |
 | `docs/selar-listing.md` | Product-listing copy, live links, upload files, and publish checklist |
 
@@ -48,6 +48,24 @@ The sales site is configured for launch:
 const BUY_URL = "https://selar.com/27778q2k78";
 const WHATSAPP_NUMBER = "2348123092362";
 ```
+
+Every paid CTA carries an explicit `href="https://selar.com/27778q2k78"` so
+checkout still works with JavaScript disabled.
+
+## Paid ebook delivery (local only)
+
+The full ebook is a **paid product** and is not part of the deployed site. Build it
+locally and upload it to Selar by hand:
+
+```bash
+python scripts/build_ebook.py --all
+# delivery/digital-product-cash-machine.pdf   paid book  (gitignored, upload to Selar)
+# assets/ebook/free-sample-chapter1.pdf       free sample (committed + deployed)
+```
+
+`delivery/` is in `.gitignore`, so the paid PDF is never committed and never
+published by Cloudflare Pages. The only public file is the free Chapter 1 sample;
+the complete book is available exclusively through the Selar checkout.
 
 Its canonical URL and Product structured-data URL both use
 `https://how-to-make-5k-10k-daily.pages.dev/`. The Selar listing source of

@@ -2,9 +2,9 @@
    Digital Product Cash Machine — site scripts
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── CONFIG — EDIT THESE TWO LINES BEFORE GOING LIVE ──────────── */
-const BUY_URL = "https://selar.co/your-playbook-product-link";      // ← PASTE your real Selar product link here
-const WHATSAPP_NUMBER = "234XXXXXXXXXX";                            // ← your WhatsApp number (country code, no +)
+/* ── LIVE CHECKOUT CONFIG ─────────────────────────────────────── */
+const BUY_URL = "https://selar.com/27778q2k78";                     // Live Selar checkout
+const WHATSAPP_NUMBER = "2348123092362";                           // Country code, no +
 /* ─────────────────────────────────────────────────────────────── */
 
 document.addEventListener("DOMContentLoaded", () => {

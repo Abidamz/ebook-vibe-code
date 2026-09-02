@@ -20,8 +20,12 @@ make **₦5,000 – ₦10,000 daily (₦150K–₦300K monthly)** selling digita
 | `assets/css/styles.css` | All styling (dark fintech look, gold/green naira theme) |
 | `assets/js/main.js` | Buy-button wiring, sticky Buy Now bar, FAQ accordion, mobile nav, scroll reveal |
 | `assets/img/` | Cover art + 6 illustrations (AI-generated; web-optimized copies in `assets/img/web/`) |
+| `assets/img/selar-cover*.png` | Three finalized, square Selar listing-cover options (`selar-cover.png` is the primary) |
 | `assets/ebook/digital-product-cash-machine.pdf` | The finished 38-page ebook (PDF) |
-| `scripts/build_ebook.py` | Rebuilds the ebook PDF (Python + fpdf2) |
+| `assets/ebook/free-sample-chapter1.pdf` | Free Chapter 1 sample with a clickable CTA to the live sales page |
+| `scripts/build_ebook.py` | Rebuilds the full ebook and free sample PDFs (Python + fpdf2) |
+| `scripts/make_selar_cover*.py` | Rebuilds the three Selar listing-cover images (Python + Pillow) |
+| `docs/selar-listing.md` | Product-listing copy, live links, upload files, and publish checklist |
 
 ## Reference links used inside the ebook
 
@@ -36,19 +40,22 @@ Every chapter ends with a **Sources & References** box, and the appendix lists a
 - @egbokavictory_ — [how I make at least 10K daily](https://x.com/egbokavictory_/status/2089711208832057499)
 - @dotsokt — [Reddit Custom Feeds content engine](https://x.com/dotsokt/status/2092346283302457636)
 
-## ⚠️ Before going live — 2 things to edit
+## Live configuration
 
-1. **Your checkout link** — open `assets/js/main.js` and replace:
+The sales site is configured for launch:
 
-   ```js
-   const BUY_URL = "https://selar.co/your-digital-product-cash-machine"; // ← your Selar checkout link
-   const WHATSAPP_NUMBER = "234XXXXXXXXXX";                             // ← your WhatsApp number
-   ```
+```js
+const BUY_URL = "https://selar.com/27778q2k78";
+const WHATSAPP_NUMBER = "2348123092362";
+```
 
-2. **Your domain** — in `index.html`, replace `YOUR-DOMAIN.pages.dev` in the
-   `link rel="canonical"` and JSON-LD blocks (search for `YOUR-DOMAIN`).
+Its canonical URL and Product structured-data URL both use
+`https://how-to-make-5k-10k-daily.pages.dev/`. The Selar listing source of
+truth, including the delivery file and product copy, is in
+[`docs/selar-listing.md`](docs/selar-listing.md).
 
-Also update the email in the footer (`mailto:hello@yourdomain.com`).
+The footer email (`mailto:hello@yourdomain.com`) is the only remaining optional
+site-identity placeholder; update it when an inbox is ready.
 
 ## Deploy to Cloudflare Pages (free)
 
@@ -73,7 +80,9 @@ In the Pages project → **Custom domains** → add your domain and follow the D
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install fpdf2 pillow
-.venv/bin/python scripts/build_ebook.py   # → assets/ebook/digital-product-cash-machine.pdf
+.venv/bin/python scripts/build_ebook.py --all  # → full ebook + free sample PDFs
+.venv/bin/python scripts/make_selar_cover.py             # → primary + B cover options
+.venv/bin/python scripts/make_selar_cover_c.py           # → C cover option
 ```
 
 ## License

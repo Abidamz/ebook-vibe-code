@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Builds "Digital Product Cash Machine" ebook PDF (A4, portrait).
-Run:  .venv/bin/python scripts/build_ebook.py
-Output: assets/ebook/digital-product-cash-machine.pdf
+Builds "Digital Product Cash Machine" ebook PDFs (A4, portrait).
+Run:  .venv/bin/python scripts/build_ebook.py --all
+Outputs:
+  assets/ebook/digital-product-cash-machine.pdf
+  assets/ebook/free-sample-chapter1.pdf
 """
 import os
 import re
@@ -13,6 +15,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "ebook", "digital-product-cash-machine.pdf")
 IMG = os.path.join(ROOT, "assets", "img")
 OPT = os.path.join(ROOT, "assets", "img", "opt")
+LIVE_SITE_URL = "https://how-to-make-5k-10k-daily.pages.dev/"
 DJ = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 DJB = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
@@ -159,7 +162,7 @@ class Book(FPDF):
         self.multi_cell(W, 6.5, text, new_x="LMARGIN", new_y="NEXT")
         self.ln(1.5)
 
-    def callout(self, text, label=None, kind="amber"):
+    def callout(self, text, label=None, kind="amber", link=None):
         text, label = clean(text), clean(label) if label else None
         bg = AMBER_L if kind == "amber" else GREEN_L
         border = GOLD if kind == "amber" else GREEN
@@ -182,7 +185,7 @@ class Book(FPDF):
             self.set_xy(M + 5, self.get_y() + 1)
         self.set_font("DJ", "", 10.3)
         self.set_text_color(60, 50, 20)
-        self.multi_cell(W - 10, 5.9, text, new_x="LMARGIN", new_y="NEXT")
+        self.multi_cell(W - 10, 5.9, text, new_x="LMARGIN", new_y="NEXT", link=link)
         self.set_y(y + h + 5)
 
     def task_box(self, text):
@@ -1204,9 +1207,9 @@ def build_sample():
     pdf.multi_cell(W, 7, "One-time payment · Instant download · 7-day money-back guarantee",
                    new_x="LMARGIN", new_y="NEXT", align="C")
     pdf.ln(6)
-    pdf.callout("Get instant access at the website: yourdomain.pages.dev — or message the author on WhatsApp. "
+    pdf.callout(f"Get instant access at {LIVE_SITE_URL} — or message the author on WhatsApp. "
                 "Consistency first. Scaling later. Do the work.",
-                label="GET THE FULL BOOK", kind="green")
+                label="GET THE FULL BOOK", kind="green", link=LIVE_SITE_URL)
 
     os.makedirs(os.path.dirname(SAMPLE_OUT), exist_ok=True)
     pdf.output(SAMPLE_OUT)
@@ -1215,7 +1218,10 @@ def build_sample():
 
 if __name__ == "__main__":
     import sys
-    if "--sample" in sys.argv:
+    if "--all" in sys.argv:
+        build()
+        build_sample()
+    elif "--sample" in sys.argv:
         build_sample()
     else:
         build()

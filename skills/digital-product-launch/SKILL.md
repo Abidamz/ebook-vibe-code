@@ -24,6 +24,14 @@ One repo → five coordinated deliverables plus the doc that ties them together:
 6. **Listing doc** (`docs/<marketplace>-listing.md`) — source of truth: live links,
    product fields, copy, delivery-file workflow, publish checklist.
 
+## Companion skill
+
+`ebook-writing` (same `skills/` directory) owns the MANUSCRIPT: the 10-beat chapter arc,
+chapter anatomy, honesty voice, attribution rules, and the outline→PDF builder. Use it
+first to produce the paid + sample PDFs, then hand them to this skill's pipeline
+(covers, site, ads, listing, paywall). This skill assumes the PDFs exist; that one
+assumes the product doesn't yet.
+
 ## When to use
 
 - "Launch/sell this ebook or digital product."

@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "title": "The First-Client Freelance Writing Playbook",
+    "title_accent": "NO PORTFOLIO NEEDED",
+    "subtitle": "Land your first three paid writing clients in 30 days, starting from zero.",
+    "author": "Your Name",
+    "identity": "The First-Client Freelance Writing Playbook  ·  © 2026 Your Name",
+    "price_line": "$19   (was $49)",
+    "terms": "One-time payment · Instant download · 7-day money-back guarantee",
+    "cta_url": "https://example.com/checkout",
+    "cta_label": "GET THE FULL BOOK",
+    "disclaimer": "Educational only. Client outcomes depend on your work, niche and market conditions. Not career or legal advice."
+  },
+  "orientation": {
+    "is": [
+      "A step-by-step system: pick a niche → write samples → pitch → deliver → raise rates",
+      "Written for complete beginners — no portfolio, no contacts, no degree required",
+      "Honest — it shows the rejection counts involved and never hides the effort"
+    ],
+    "is_not": [
+      "A 'make money while you sleep' promise",
+      "A content-mill grind guide — we aim for direct clients",
+      "For people who won't send pitches"
+    ],
+    "audience": ["Students", "Career switchers", "Stay-at-home parents", "Side-hustlers"],
+    "how_to_use": "Tasks beat reading. Each chapter ends with a DO-THIS-NOW box; do it before the next chapter."
+  },
+  "chapters": [
+    {
+      "title": "The System",
+      "promise": "What this chapter gives you: the whole route on one page, so you always know which step you're on.",
+      "outcomes": [
+        "See the five beats: niche → samples → pitch → deliver → raise",
+        "Know why beginners stall at 'portfolio' and what to do instead"
+      ],
+      "sections": [
+        {
+          "head": "Why nobody needs your portfolio",
+          "paras": [
+            "Clients buy risk reduction, not credentials. Three tailored samples in their industry reduce perceived risk more than a generic portfolio ever will.",
+            "So we build samples on demand, per pitch. That single reframe is most of the book."
+          ],
+          "bullets": ["Samples are written per pitch, not collected", "Every pitch names one problem you'll solve", "Delivery is the real audition"]
+        },
+        {
+          "head": "The five beats",
+          "paras": ["Each of the next chapters owns one beat. Skip nothing; the order is the strategy."],
+          "numbered": ["Pick one niche you can talk about for an hour", "Write two spec samples for that niche", "Send ten tailored pitches a week", "Deliver early, over-communicate", "Raise rates every three clients"]
+        }
+      ],
+      "myths": [
+        "I need a portfolio before I can pitch",
+        "I need to be a perfect writer",
+        "Clients read long pitches"
+      ],
+      "task": "Write down: 1) one niche you already know, 2) three businesses in it you'd pitch, 3) the sentence you'd open with. Ten minutes, tonight.",
+      "refs": [["@writerthread — why portfolios lose pitches", "https://example.com/thread-1"]]
+    },
+    {
+      "title": "Pick a Niche You Can Defend",
+      "promise": "What this chapter gives you: a one-line niche statement that makes pitches easy to write.",
+      "outcomes": ["A niche statement template", "A shortlist of ten pitchable businesses"],
+      "sections": [
+        {
+          "head": "The niche statement",
+          "paras": ["Fill the blank: 'I help [who] get [outcome] through [format].' If it needs two sentences, it's two niches — pick one."],
+          "bullets": ["Who: an industry you can name brands in", "Outcome: money, time, or trust", "Format: emails, landing pages, case studies"]
+        }
+      ],
+      "myths": ["Niching shrinks my opportunities", "I must love the niche forever"],
+      "script": "I help [industry] founders get [outcome] through [format]. Recent example: [one-line result or spec sample].",
+      "task": "Write three niche statements. Kill two. Put the survivor at the top of your notes app.",
+      "refs": []
+    },
+    {
+      "title": "Pitch Without Begging",
+      "promise": "What this chapter gives you: a 90-word pitch you can send today, and a sending rhythm that survives rejection.",
+      "outcomes": ["The 90-word pitch", "A ten-per-week sending plan"],
+      "sections": [
+        {
+          "head": "The 90 words",
+          "paras": ["Line 1: something true about their business. Line 2-3: the problem it causes. Line 4: what you'll write. Line 5: the ask. Nothing else."],
+          "numbered": ["Observation", "Cost of the problem", "Your fix in one sentence", "One sample link", "One-question ask"]
+        }
+      ],
+      "myths": ["More words look more professional", "Follow-ups are annoying"],
+      "script": "Hi [name] — your [page/email] currently [true observation]. That usually costs [outcome]. I'd rewrite it to [fix]; here's a 200-word spec in your voice: [link]. Want the rest this week? [your name]",
+      "task": "Send five pitches today using the script. Log each in your tracker. Five, not someday.",
+      "refs": [["@pitchcoach — the 90-word pitch", "https://example.com/thread-2"]]
+    },
+    {
+      "title": "Deliver So They Rehire",
+      "promise": "What this chapter gives you: the delivery checklist that turns one gig into a retainer.",
+      "outcomes": ["A pre-send checklist", "A handover note template"],
+      "sections": [
+        {
+          "head": "The handover note",
+          "paras": ["Every delivery ships with three bullets: what you changed, why, and what you'd test next. It reads as strategy, not service."]
+        }
+      ],
+      "myths": ["Good work speaks for itself"],
+      "task": "Draft your handover note template now, before you need it.",
+      "refs": []
+    },
+    {
+      "title": "Raise Rates Without Apology",
+      "promise": "What this chapter gives you: the three-client ladder and the exact raise sentence.",
+      "outcomes": ["A rate ladder", "A raise message you can send"],
+      "sections": [
+        {
+          "head": "The ladder",
+          "paras": ["Clients 1-3 prove you finish. Clients 4-6 pay for proof. From client 7, price the outcome, not the words."],
+          "numbered": ["Clients 1-3: learn-rate, testimonials owed", "Clients 4-6: market rate, case studies owed", "Client 7+: outcome pricing, scope in writing"]
+        }
+      ],
+      "myths": ["Raising rates loses clients"],
+      "script": "From [date] my rate for [scope] is [new]. Current projects stay at [old] through [date]. Happy to lock your next two pieces at the old rate this week.",
+      "task": "Write your raise message now, with placeholders. Send it on client three, not client ten.",
+      "refs": []
+    }
+  ],
+  "plan": {
+    "title": "Your 30-Day First-Client Plan",
+    "weeks": [
+      {
+        "label": "Week 1 — Position",
+        "days": ["Day 1 — write three niche statements, kill two (Ch 2)", "Day 2 — list ten pitchable businesses (Ch 2)", "Day 3 — write spec sample one (Ch 1)", "Day 4 — write spec sample two (Ch 1)", "Day 5 — draft the 90-word pitch (Ch 3)", "Day 6 — rest & review", "Day 7 — rest & review"]
+      },
+      {
+        "label": "Week 2 — Send",
+        "days": ["Day 8 — send five pitches (Ch 3)", "Day 9 — send five pitches", "Day 10 — log replies, tweak line 1 (Ch 3)", "Day 11 — send five pitches", "Day 12 — send five pitches", "Day 13 — rest & review", "Day 14 — rest & review"]
+      },
+      {
+        "label": "Week 3 — Win",
+        "days": ["Day 15 — follow up on all silent pitches (Ch 3)", "Day 16 — send five new pitches", "Day 17 — scope call or reply: use handover thinking (Ch 4)", "Day 18 — deliver early if won; else send five", "Day 19 — deliver + handover note (Ch 4)", "Day 20 — rest & review", "Day 21 — rest & review"]
+      },
+      {
+        "label": "Week 4 — Systemize",
+        "days": ["Day 22 — write your delivery checklist (Ch 4)", "Day 23 — ask client one for a testimonial", "Day 24 — send five pitches at new confidence", "Day 25 — draft your raise message (Ch 5)", "Day 26 — plan clients 4-6 targets (Ch 5)", "Day 27 — rest & review", "Day 28 — review tracker, pick next month's one metric"]
+      }
+    ]
+  },
+  "worksheets": [
+    {
+      "title": "Worksheet 1 — Niche Filter",
+      "chapter": 2,
+      "prompts": ["The industry I can name ten brands in:", "The outcome they pay for:", "The format I'll write:", "My one-line niche statement:", "Three businesses I'll pitch first:"]
+    },
+    {
+      "title": "Worksheet 2 — Pitch Log",
+      "chapter": 3,
+      "prompts": ["Business + contact:", "Line-1 observation I used:", "Sent on:", "Reply / silence:", "Follow-up sent on:", "Lesson:"]
+    }
+  ],
+  "tracker_rows": 28,
+  "appendix_note": "Every source, grouped by chapter."
+}

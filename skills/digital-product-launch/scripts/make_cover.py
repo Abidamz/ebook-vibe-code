@@ -59,6 +59,21 @@ def fit(d, text, face, max_size, max_width, min_size=18):
     return font(face, min_size)
 
 
+def wrap(d, text, fnt, max_width):
+    """Word-wrap to max_width at a given font; never slice mid-word."""
+    lines, cur = [], ""
+    for word in text.split():
+        cand = f"{cur} {word}".strip()
+        if d.textlength(cand, font=fnt) <= max_width or not cur:
+            cur = cand
+        else:
+            lines.append(cur)
+            cur = word
+    if cur:
+        lines.append(cur)
+    return lines
+
+
 def grain(im, opacity=13):
     noise = Image.effect_noise(im.size, 22).convert("L")
     noise = noise.point(lambda v: 255 if v > 255 - opacity else 0)
@@ -109,7 +124,7 @@ def main():
     d.line([(lx, y + 8), (lx + int(lw * 0.85), y + 8)], fill=P["gold"], width=6)
     y += 40
     f = fit(d, CONFIG["promise"], F["sansb"], 52, lw)
-    for line in [CONFIG["promise"][i:i + 34] for i in range(0, len(CONFIG["promise"]), 34)]:
+    for line in wrap(d, CONFIG["promise"], f, lw):
         d.text((lx, y), line, font=f, fill=P["ink"])
         y += int(f.size * 1.3)
     y += 12
@@ -118,8 +133,8 @@ def main():
         y += 48
 
     y += int(S * 0.03)
-    pf = font(F["sansb"], 40)
-    pw = d.textlength(CONFIG["pill"], font=pf) + 90
+    pf = fit(d, CONFIG["pill"], F["sansb"], 40, lw - 90)
+    pw = min(lw, d.textlength(CONFIG["pill"], font=pf) + 90)
     d.rounded_rectangle([lx, y, lx + pw, y + 96], radius=48, fill=P["ink"])
     d.text((lx + pw / 2, y + 48), CONFIG["pill"], font=pf, fill=P["white"], anchor="mm")
     y += 130
